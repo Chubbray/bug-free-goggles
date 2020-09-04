@@ -28,17 +28,23 @@ Briefly summarize the regex you will be describing and what you will explain. In
 Matching an Email – /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 ### Anchors
+/^/([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})/$/
+
 ^The        matches any string that starts with The -> 
 end$        matches a string that ends with end
 ^The end$   exact string match (starts and ends with The end)
 roar        matches any string that has the text roar in it
 
 ### Quantifiers
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]/{2,6}/)$/
+
 abc{2,5}    matches a string that has ab followed by 2 up to 5 c
 
 ### OR Operator
 
 ### Character Classes
+/^([a-z0-9_\.-]+)@([/\da-z\.-/]+)\.([a-z\.]{2,6})$/
+
 \d         matches a single character that is a digit ->
 
 .          matches any character ->
@@ -51,6 +57,8 @@ For example, \D will perform the inverse match with respect to that obtained wit
 In order to be taken literally, you must escape the characters ^.[$()|*+?{\with a backslash \ as they have special meaning.
 
 ### Flags
+( / ) ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$ ( / )
+
 A regex usually comes within this form /abc/, where the search pattern is delimited by two slash characters /. At the end we can specify a flag with these values (we can also combine them each other):
 
 m (multi-line) when enabled ^ and $ will match the start and end of a line, instead of the whole string
@@ -58,6 +66,8 @@ m (multi-line) when enabled ^ and $ will match the start and end of a line, inst
 ### Grouping and Capturing
 
 ### Bracket Expressions
+/^(/[a-z0-9_\.-]/+)@([\da-z\.-]+)\.(/[a-z\.]/{2,6})$/
+
 [abc]            matches a string that has either an a or a b or a c -> is the same as a|b|c -> Try it!
 [a-c]            same as previous
 
