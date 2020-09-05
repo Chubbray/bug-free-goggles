@@ -10,19 +10,19 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
  I will try and attempt to explain to you how to wright the code to make this happen. The code example is: Matching an Email – /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/. I will try and break down each section to make it easier to understand.
 
+ exampl of email + problems
+
 ## Table of Contents
 
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
-- [OR Operator](#or-operator)
+
 - [Character Classes](#character-classes)
 - [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
+
 
 ## Regex Components
 Matching an Email – /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
@@ -40,11 +40,12 @@ roar        matches any string that has the text roar in it
 
 abc{2,5}    matches a string that has ab followed by 2 up to 5 c
 
-### OR Operator
+
 
 ### Character Classes
-/^([a-z0-9_\.-]+)@([/\da-z\.-/]+)\.([a-z\.]{2,6})$/
+/^([a-z0-9_\.-]+)@([/\d`a-z`\.`-]+)\.([a-z\.]{2,6})$/
 
+- matching careter
 \d         matches a single character that is a digit ->
 
 .          matches any character ->
@@ -64,6 +65,7 @@ A regex usually comes within this form /abc/, where the search pattern is delimi
 m (multi-line) when enabled ^ and $ will match the start and end of a line, instead of the whole string
 
 ### Grouping and Capturing
+/^`([a-z0-9_\.-]+)`@`([\da-z\.-]+)`\.`([a-z\.]{2,6})`$/
 
 ### Bracket Expressions
 /^(/[a-z0-9_\.-]/+)@([\da-z\.-]+)\.(/[a-z\.]/{2,6})$/
@@ -74,12 +76,10 @@ m (multi-line) when enabled ^ and $ will match the start and end of a line, inst
 Remember that inside bracket expressions all special characters (including the backslash \) lose their special powers: thus we will not apply the “escape rule”.
 
 ### Greedy and Lazy Match
+/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]`{3}`)$/
 
-### Boundaries
+?
 
-### Back-references
-
-### Look-ahead and Look-behind
 
 ## Author
 
